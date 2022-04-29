@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Участники</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href ='/'>Главная страница</a>
+        </li>
+        <li>
+             <a href ='/game/'>Лотерея</a>
+        </li>
+    </ul>
+    <hr>
+    {% if form%}
+    <form method="post">
+        <p>Введите имя нового участника</p>
+        <input type="text" name="input_name_1">
+        <p>Введите фамилию нового участника</p>
+        <input type="text" name="input_name_2">
+        <br>
+        <br>
+        <button type="submit">Присоединиться к лотерее</button>
+
+    </form>
+    {% endif%}
+    <hr>
+    <table frame="border" >
+        <tr><th>Имя</th><th>Фaмилия</th>
+        {% for i in range(num) %}
+        <tr><th>{{context_name_1[i]}}</th><th>{{context_name_2[i]}}</th>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>

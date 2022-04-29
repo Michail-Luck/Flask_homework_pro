@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+</head>
+<body>
+
+    <ul>
+        <li>
+            <a href ='/'>Главная страница</a>
+        </li>
+        <li>
+            <a href ='/form/'>Участники</a>
+        </li>
+    </ul>
+    <hr>
+    <form method="post">
+        <p>Вы готовы испытать удачу?</p>
+        <br>
+        <button type="submit">Старт</button>
+        <br>
+    </form>
+    <hr>
+    {% if victory%}
+    <p style="color: orange; font-size: 300%">Победитель  - {{context_name_1[victory]}} {{context_name_2[victory]}} с результатом {{point[victory]}}</p>
+
+    <hr>
+    {% endif%}
+    <table frame="border" >
+        <th>Имя</th><th>Фамилия</th><th>Баллы</th>
+        {% for i in range(num) %}
+        <tr><th>{{context_name_1[i]}}</th><th>{{context_name_2[i]}}</th><th>{{point[i]}}</th>
+        {% endfor %}
+    </table>
+</body>
+</html>
